@@ -1,7 +1,7 @@
 const Card = (props) => {
     return (
         <div style={{margin: '1em'}}>
-            <img src={props.avatar_url} />
+            <img width="75" src={props.avatar_url} />
             <div style={{display: 'inline-block', marginLeft: 10}}>
                 <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>
                 	{props.name}
@@ -12,16 +12,21 @@ const Card = (props) => {
     );
 };
 
+let data = [
+    {   name: "imthefrizzlefry",
+        avatar_url: "https://avatars1.githubusercontent.com/u/8007606?v=4",
+        company: "none" },
+    {   name: "someone",
+        avatar_url: "http://placehold.it/75",
+        company: "null" }
+];
+
 const CardList = (props) => {
     return (
         <div>
-            <Card 
-                name="imthefrizzlefry"
-                avatar_url="https://avatars1.githubusercontent.com/u/8007606?v=4"
-                company="null"
-            />
+            {props.cards.map(card => <Card />)}
         </div>
     )
 }
 
-ReactDOM.render(<CardList />, mountNode);
+ReactDOM.render(<CardList cards={data} />, mountNode);
