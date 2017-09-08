@@ -12,4 +12,12 @@ const Card = (props) => {
     );
 };
 
-ReactDOM.render(<Card />, mountNode);
+const CardList = (props) => {
+    return (
+        <div>
+            <Card />
+        </div>
+    )
+}
+
+ReactDOM.render(<CardList />, mountNode);
