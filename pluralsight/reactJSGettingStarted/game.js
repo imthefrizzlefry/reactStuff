@@ -1,3 +1,7 @@
+// Pluralsight Course: https://app.pluralsight.com/library/courses/react-js-getting-started
+// Made for site: https://jscomplete.com/repl
+// Final code here: https://gist.github.com/samerbuna/476304ef96408072a0040b121a51ad4b
+
 // utilizes bootstrap
 // uses game.css
 // utilizes lowdash
