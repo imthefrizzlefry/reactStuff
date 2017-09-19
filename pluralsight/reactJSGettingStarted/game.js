@@ -157,18 +157,18 @@ class Game extends React.Component {
         }), this.updateDoneStatus);
     };
     redraw = () => {
-        if(this.state.redraws === 0) { return; }
-        this.setState(prevState =>({
+        if (this.state.redraws === 0) { return; }
+        this.setState(prevState => ({
             selectedNumbers: [],
             answerIsCorrect: null,
             numberOfStars: Game.randomNumber(),
-            redraws: prevState.redraws - 1
+            redraws: prevState.redraws - 1,
         }), this.updateDoneStatus);
     };
     
     possibleSolutions = ({numberOfStars, usedNumbers}) => {
-        const possibleNumber = _.range(1, 10).filter(number => 
-            usedNumber.indexOf(number) === -1
+        const possibleNumbers = _.range(1, 10).filter(number => 
+            usedNumbers.indexOf(number) === -1
         );
 
         return possibleCombinationSum(possibleNumbers, numberOfStars);
@@ -209,7 +209,7 @@ class Game extends React.Component {
                             redraws={redraws} />
                     <Answer selectedNumbers={selectedNumbers} 
                             unselectNumber={this.unselectNumber} />                
-                </div>  
+                </div>
                 <br />
                 {doneStatus ?
                     <DoneFrame doneStatus={doneStatus} /> :
